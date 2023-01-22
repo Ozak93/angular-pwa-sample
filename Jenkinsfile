@@ -15,6 +15,7 @@ pipeline {
                 sh 'cd /var/www/devenv.digiarenas.com/apps/browser/ '
                 
                 sh 'pm2 start "ng serve --host 0.0.0.0"'
+                sh 'pm2 save'
             }
         }
     }
