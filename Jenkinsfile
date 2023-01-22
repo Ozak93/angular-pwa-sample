@@ -11,13 +11,15 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh 'JENKINS_NODE_COOKIE=dontKillMe myProcess'
+
                 sh 'whoami'
                 sh 'cp -r dist/my-app/* /var/www/devenv.digiarenas.com/apps'
                 sh 'cd /var/www/devenv.digiarenas.com/apps/browser/ '
-               sh 'export JENKINS_NODE_COOKIE=dontKillMe  '
+            
                 sh 'pm2 start "ng serve --host 0.0.0.0  --port 8082 --name My Angular App "'
                 sh 'pm2 save'
-                sh 'export JENKINS_NODE_COOKIE=dontKillMePlease  '
+                 
               
  
             }
