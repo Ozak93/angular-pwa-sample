@@ -12,7 +12,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'cp -r dist/my-app/* /var/www/devenv.digiarenas.com/apps'
-                sh 'pm2 start /var/www/devenv.digiarenas.com/apps/browser/index.html --name "my-app"'
+                sh 'cd /var/www/devenv.digiarenas.com/apps/browser/ '
+                
+                sh 'pm2 start "ng serve --host 0.0.0.0"'
             }
         }
     }
