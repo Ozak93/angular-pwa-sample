@@ -28,7 +28,7 @@ pipeline {
         success {
             withEnv(['JENKINS_NODE_COOKIE=dontkillMe']) {
                 sh 'export JENKINS_NODE_COOKIE=dontKillMe'
-                sh 'export JENKINS_SERVER_COOKIE=dontKillMe'.
+                sh 'export JENKINS_SERVER_COOKIE=dontKillMe'
                 sh 'echo test'
                 sh 'pm2 start "ng serve --host 0.0.0.0  --port 8082  "'
                 sh 'pm2 save'
