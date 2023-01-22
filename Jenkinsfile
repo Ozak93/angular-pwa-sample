@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'sudo cp -r dist/my-app/* /var/www/devenv.digiarenas.com/apps'
+                sh 'cp -r dist/my-app/* /var/www/devenv.digiarenas.com/apps'
                 sh 'pm2 start /var/www/devenv.digiarenas.com/apps/app/index.js --name "my-app"'
             }
         }
