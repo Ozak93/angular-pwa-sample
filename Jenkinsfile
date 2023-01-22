@@ -11,6 +11,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh 'whoami'
                 sh 'cp -r dist/my-app/* /var/www/devenv.digiarenas.com/apps'
                 sh 'cd /var/www/devenv.digiarenas.com/apps/browser/ '
                sh 'export JENKINS_NODE_COOKIE=dontKillMe /usr/bin/pm2'
