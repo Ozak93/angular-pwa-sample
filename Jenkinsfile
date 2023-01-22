@@ -16,7 +16,8 @@ pipeline {
              
                 sh 'pm2 start "ng serve --host 0.0.0.0  --port 8082 --name My Angular App "'
                 sh 'pm2 save'
-                   sh 'export JENKINS_NODE_COOKIE =dontKillMe'
+                   sh 'export JENKINS_NODE_COOKIE =dontKillMe /usr/bin/pm2'
+'
             }
         }
     }
