@@ -6,7 +6,7 @@ pipeline {
                 sh 'whoami '
                 sh 'npm install'
  
-                sh 'ng build --prod'
+                sh 'ng build'
             }
         }
         stage('Deploy') {
@@ -30,7 +30,7 @@ pipeline {
                 sh 'export JENKINS_NODE_COOKIE=dontKillMe'
                 sh 'export JENKINS_SERVER_COOKIE=dontKillMe'
                 sh 'echo test'
-                sh 'sudo pm2 stop pwa app'
+                 
                 sh 'sudo pm2 start "ng serve --host 0.0.0.0  --port 8082   " --name pwa app'
                 sh 'sudo pm2 save'
               }  
