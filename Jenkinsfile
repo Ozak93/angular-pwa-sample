@@ -26,10 +26,9 @@ pipeline {
     }
            post { 
         success {
-            withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+            withEnv(['JENKINS_NODE_COOKIE=dontkillMe']) {
                 sh 'pm2 start "ng serve --host 0.0.0.0  --port 8082 --name My Angular App "'
                 sh 'pm2 save'
-
               }  
         
                  
