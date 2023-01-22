@@ -24,10 +24,11 @@ pipeline {
  
             }
         }
+    
+    }
            post { 
         success {
             sh 'sleep infinity'
         }
-    }
     }
 }
