@@ -11,7 +11,7 @@
     "e2e": "ng e2e"
   },
   "proxy": "http://0.0.0.0:8082",
-
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
