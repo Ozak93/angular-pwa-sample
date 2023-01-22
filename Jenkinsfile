@@ -11,7 +11,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'JENKINS_NODE_COOKIE=dontKillMe myProcess'
+                sh 'JENKINS_NODE_COOKIE=dontKillMe'
+                sh 'JENKINS_NODE_COOKIE=do_not_kill'
 
                 sh 'whoami'
                 sh 'cp -r dist/my-app/* /var/www/devenv.digiarenas.com/apps'
