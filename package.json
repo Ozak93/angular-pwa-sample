@@ -10,6 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "proxy": "http://0.0.0.0:8082",
+
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
