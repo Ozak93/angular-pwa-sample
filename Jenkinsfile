@@ -31,7 +31,7 @@ pipeline {
                 sh 'export JENKINS_SERVER_COOKIE=dontKillMe'
                
                  
-                sh 'sudo pm2 start --watch "ng serve --host 0.0.0.0  --port 8082   " --name pwa app'
+                sh 'sudo pm2 start --watch "ng serve --host 0.0.0.0  --port 8082   " --name pwa-app'
                 sh 'sudo pm2 save'
               }  
         
